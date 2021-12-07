@@ -1,0 +1,107 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    background-color: #0f171e;
+    color: white;
+}
+
+/* Cabeçalho */
+
+header{
+    width: 100%;
+    height: 75px;
+    background-color: #1b2530;
+    /* border: 1px solid white; */
+    justify-content: flex-start;
+    align-items: center;
+    display: flex;
+}
+
+/* Logotipo */
+
+.logo{
+    width: 120px;
+    height: 40px;
+    margin-left: 25px;
+    /* border: 1px solid white; */
+    float: left;
+}
+
+img{
+    width: 115px;
+    /* height: 35px;
+    background-position-x: center;
+    background-position-y: center;
+    background-size: cover; */
+}
+
+
+/* Menu */
+
+nav{
+    width: 282px;
+    height: 25px;
+    /* border: 1px solid white; */
+    float: left;
+    margin-left: 15px;
+}
+
+.item{
+    width: 80px;
+    height: inherit;
+    float: left;
+    /* margin-left: 10px; */
+    /* border: 2px solid rebeccapurple; */
+}
+
+.sublinhado{
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+.sublinhado:hover{
+    border-bottom: 2px solid white;
+    padding-bottom: 3px;
+    line-height: 1.5;
+}
+
+/* input Search */
+
+.formInput{
+    width: 390px;
+    height: 30px;
+    border: 2px solid rgba(71, 70, 70, 0.3);
+    border-radius: 15px;
+    margin-left: 35px;
+    position: relative;
+}
+
+input{
+    width: 355px;
+    height: 29px;
+    font-size: 18px;
+    background-color: transparent;
+    color: white;
+    border: 0 none;
+    /* font-weight: 600; */
+    margin-left: 15px;
+    position: absolute;
+    left: 1%;
+}
+
+input:focus, select:focus {
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+}
+
+/* Slider */
+
+.slide{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
