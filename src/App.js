@@ -1,12 +1,12 @@
 import './App.css';
-import Home from './moviegoers/Home';
-import Header from './moviegoers/Header';
+import Routers from './Router';
 
 function App() {
   return (
     <div className="App">
-      <Header/>
-      <Home/>
+      <div>
+        <Routers/>
+      </div>
     </div>
   );
 }

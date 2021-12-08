@@ -1,0 +1,159 @@
+/* Cabeçalho */
+
+header{
+    width: 100%;
+    height: 75px;
+    background-color: #1b2530;
+    /* border: 1px solid white; */
+    justify-content: flex-start;
+    align-items: center;
+    display: flex;
+}
+
+/* Logotipo */
+
+.logo{
+    width: 120px;
+    height: 40px;
+    margin-left: 25px;
+    /* border: 1px solid white; */
+    float: left;
+}
+
+img{
+    width: 115px;
+}
+
+
+/* Menu */
+
+nav{
+    width: 282px;
+    height: 25px;
+    /* border: 1px solid white; */
+    float: left;
+    margin-left: 15px;
+}
+
+.link{
+    text-decoration: none;
+    color: white;
+}
+
+.item{
+    width: 80px;
+    height: inherit;
+    float: left;
+    margin-left: 10px;
+    /* border: 1px solid rebeccapurple; */
+}
+
+.sublinhado{
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+.sublinhado:hover{
+    border-bottom: 2px solid white;
+    padding-bottom: 3px;
+    line-height: 1.5;
+}
+
+/* Submenu de Categorias */
+
+.title{
+    text-align: left;
+    margin-left: 30px;
+    margin-top: 20px;
+    border-left: 2px solid white;
+    padding-bottom: 20px;
+    padding-left: 30px;
+}
+
+.containerSubmenu{
+    width: 800px;
+    min-height: 300px;
+    max-height: auto;
+    background-color: #252e39;
+    position: relative;
+    display: inline-block;
+    z-index: 3;
+    margin-top: 30px;
+    left: -240%;
+    display: none;
+}
+
+.itemsCategoria{
+    width: 80px;
+    height: 50px;
+    /* border: 1px solid #555fec; */
+    position: relative;
+    display: inline-block;
+}
+
+.subCategoria{
+    width: 350px;
+    height: auto;
+    /* background-color: maroon; */
+    z-index: 3;
+    position: absolute;
+    margin-left: 30px;
+    padding-left: 30px;
+    border-left: 2px solid white;
+}
+
+.subCategoria2{
+    width: 350px;
+    height: auto;
+    position: absolute;
+    /* background-color: mediumorchid; */
+    right: 4%;
+}
+
+.itemsCategoria:hover .containerSubmenu {
+    display: inline-block;
+}
+
+/* Itens nome categorias */
+
+.subItem{
+    list-style: none;
+    text-align: left;
+    margin-bottom: 9px;
+    color: #8197a4;
+}
+
+.subItem:hover{
+    color: white;
+    cursor: pointer;
+}
+
+/* input Search */
+
+.formInput{
+    width: 390px;
+    height: 30px;
+    border: 2px solid rgba(71, 70, 70, 0.3);
+    border-radius: 15px;
+    margin-left: 35px;
+    position: relative;
+}
+
+input{
+    width: 355px;
+    height: 29px;
+    font-size: 18px;
+    background-color: transparent;
+    color: white;
+    border: 0 none;
+    /* font-weight: 600; */
+    margin-left: 15px;
+    position: absolute;
+    left: 1%;
+}
+
+input:focus, select:focus {
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+}
