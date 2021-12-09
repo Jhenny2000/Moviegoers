@@ -24,7 +24,7 @@ function Header(){
                         <div className='containerSubmenu'>
                             <div className='title'><h3>Gêneros</h3></div>
                             <ul className='subCategoria'>
-                                <li className='subItem'>Ação e aventura</li>
+                                <Link className='link' to='/filmes'><li className='subItem'>Filmes</li></Link>
                                 <li className='subItem'>Comédia</li>
                                 <li className='subItem'>Drama</li>
                                 <li className='subItem'>Documentários</li>

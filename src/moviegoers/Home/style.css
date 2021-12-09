@@ -8,6 +8,11 @@ body{
     color: white;
 }
 
+.center{
+    margin-left: auto;
+    margin-right: auto;
+}
+
 
 /* Slider */
 
@@ -18,7 +23,58 @@ body{
     position: relative;
     z-index: 2;
 }
+.rsis-image {
+    width: inherit !important;
+    height: inherit !important;
+    background-position: center !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    
+}
 
-.destaques h1{
-    margin-top: 100px;
+/* Conteudo destaques */
+
+h2{
+    text-align: left;
+}
+
+.container{
+    width: 93%;
+    min-height: 200px;
+    height: auto;
+    border: 1px solid white;
+    margin-top: 30px;
+    margin-bottom: 150px;
+}
+
+.destaques{
+    width: 100%;
+    height: 150px;
+    margin-top: 15px;
+    margin-bottom: 65px;
+    border: 1px solid coral;
+}
+
+.card{
+    width: 239px;
+    height: inherit;
+    border: 1px solid aquamarine;
+    float: left;
+    margin-right: 13px;
+    /* position: absolute; */
+}
+
+.ultimoCard{
+    width: 235px;
+    height: inherit;
+    border: 1px solid red;
+    float: left;
+}
+
+.card img{
+    width: inherit;
+    height: inherit;
+    background-size: contain;
+    background-repeat: no-repeat ;
+    background-position: center;
 }
