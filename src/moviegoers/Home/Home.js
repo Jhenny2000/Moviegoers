@@ -5,9 +5,16 @@ import img1 from '../../img/jogoperigoso.PNG'
 import img2 from '../../img/alugue.PNG';
 import img3 from '../../img/Capturar3.PNG';
 import img4 from '../../img/theboys.PNG';
-import imgCard from '../../img/marvel.jpg'
 import Header from "../Header/Header";
 
+// img Cards
+import imgCard1 from '../../img/marvel.jpg';
+import imgCard2 from '../../img/Angelina-Jolie-Eternos-1.jpg';
+import imgCard3 from '../../img/a-garota.jpg';
+import imgCard4 from '../../img/CAPA.png';
+import imgCard5 from '../../img/cientifica.jpg';
+
+// logo 'prime'
 
 
 function Home(){
@@ -20,11 +27,11 @@ function Home(){
     ];
 
     const imagesFilmes = [
-        { url : imgCard }
-        // { nome : teste},
-        // { nome : teste},
-        // { nome : teste},
-        // { nome : teste}
+        { url : imgCard1 },
+        { url : imgCard2 },
+        { url : imgCard3 },
+        { url : imgCard4 },
+        { url : imgCard5 }
     ];
 
     return(
@@ -43,22 +50,53 @@ function Home(){
                 <h2>Em alta</h2>
                 <div className='destaques'>
                     <div className='card'>
-                        <img src={imagesFilmes} alt='teste' />
+                        <div className='primelogo'>
+                            <img src='https://m.media-amazon.com/images/G/01/digital/video/web/cues/v3/prime.svg' alt='Prime' />
+                        </div>
+                        <img src={imgCard1} alt='teste' />
                     </div>
                     <div className='card'>
-                    <img src={imagesFilmes} alt='teste n vai' />
+                        <div className='primelogo'>
+                            <img src='https://m.media-amazon.com/images/G/01/digital/video/web/cues/v3/prime.svg' alt='Prime' />
+                        </div>
+                        <img src={imgCard2} alt='teste n vai' />
                     </div>
                     <div className='card'>
-                        teste3
+                        <div className='primelogo'>
+                            <img src='https://m.media-amazon.com/images/G/01/digital/video/web/cues/v3/prime.svg' alt='Prime' />
+                        </div>
+                        <img src={imgCard3} alt='teste n vai' />
                     </div>
                     <div className='card'>
-                        teste4
+                        <div className='primelogo'>
+                            <img src='https://m.media-amazon.com/images/G/01/digital/video/web/cues/v3/prime.svg' alt='Prime' />
+                        </div>
+                        <img src={imgCard4} alt='teste n vai' />
                     </div>
-                    <div className='ultimoCard'>
-                        teste5
+                    <div className='card'>
+                        <div className='primelogo'>
+                            <img src='https://m.media-amazon.com/images/G/01/digital/video/web/cues/v3/prime.svg' alt='Prime' />
+                        </div>
+                        <img src={imgCard5} alt='teste n vai' />
                     </div>
                 </div>
-                <div className='destaques'></div>
+                <div className='destaques'>
+                    <div className='card'>
+                        <img src={imgCard1} alt='teste' />
+                    </div>
+                    <div className='card'>
+                        <img src={imgCard2} alt='teste n vai' />
+                    </div>
+                    <div className='card'>
+                        <img src={imgCard3} alt='teste n vai' />
+                    </div>
+                    <div className='card'>
+                        <img src={imgCard4} alt='teste n vai' />
+                    </div>
+                    <div className='card'>
+                        <img src={imgCard5} alt='teste n vai' />
+                    </div>
+                </div>
             </div>
         </>
     )

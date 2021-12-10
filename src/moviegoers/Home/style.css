@@ -42,7 +42,7 @@ h2{
     width: 93%;
     min-height: 200px;
     height: auto;
-    border: 1px solid white;
+    /* border: 1px solid white; */
     margin-top: 30px;
     margin-bottom: 150px;
 }
@@ -52,23 +52,28 @@ h2{
     height: 150px;
     margin-top: 15px;
     margin-bottom: 65px;
-    border: 1px solid coral;
+    /* border: 1px solid coral; */
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-auto-rows:auto;
+    grid-gap: 16px ;
+}
+
+.container .card:focus,
+.container .card:hover{
+    transform: scale(1.5);
+    z-index: 4;
+    border: 1px solid #00a8e1;
+    border-radius: 6px;
 }
 
 .card{
     width: 239px;
     height: inherit;
-    border: 1px solid aquamarine;
-    float: left;
-    margin-right: 13px;
-    /* position: absolute; */
-}
-
-.ultimoCard{
-    width: 235px;
-    height: inherit;
-    border: 1px solid red;
-    float: left;
+    position: relative;
+    display: block;
+    flex: 1 1 0px;
+    transition: transform 500ms;
 }
 
 .card img{
@@ -77,4 +82,25 @@ h2{
     background-size: contain;
     background-repeat: no-repeat ;
     background-position: center;
+    border-radius: 6px;
+    position: relative;
+}
+
+.primelogo{
+    width: 51px;
+    height: 24px;
+    position: absolute;
+}
+
+.primelogo img{
+    z-index: 2;
+
+}
+
+.container .ultimoCard:focus,
+.container .ultimoCard:hover{
+    transform: scale(1.5);
+    z-index: 1;
+    border: 1px solid #00a8e1;
+    border-radius: 6px;
 }
