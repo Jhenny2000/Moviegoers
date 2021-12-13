@@ -59,26 +59,52 @@ h2{
     grid-gap: 16px ;
 }
 
+/* Card */
+
 .container .card:focus,
 .container .card:hover{
-    transform: scale(1.5);
+    transform: scale(1.4);
     z-index: 4;
     border: 1px solid #00a8e1;
     border-radius: 6px;
 }
 
+.card img:hover{
+    border-radius: 6px 6px 0 0;
+}
+
 .card{
     width: 239px;
-    height: inherit;
+    height: 250px;
     position: relative;
     display: block;
     flex: 1 1 0px;
     transition: transform 500ms;
+    /* border: 1px solid lightcoral; */
 }
 
-.card img{
+/* informações Card */
+
+.descricao{
     width: inherit;
-    height: inherit;
+    height: 100px;
+    background-color: #1b2530;
+    /* border: 1px solid aquamarine; */
+    position: absolute;
+    top: 60%;
+    z-index: 2;
+    display: none;
+    border-radius: 0 0 6px 6px;
+}
+
+.card:hover .descricao{
+    display: block;
+}
+
+
+.card img{
+    width: 239px;
+    height: 150px;
     background-size: contain;
     background-repeat: no-repeat ;
     background-position: center;
@@ -86,21 +112,17 @@ h2{
     position: relative;
 }
 
-.primelogo{
+/* Logo prime */
+
+.primelogo img {
     width: 51px;
     height: 24px;
     position: absolute;
+    left: 0%;
+    border-radius: 6px 0 0 0;
 }
 
 .primelogo img{
     z-index: 2;
 
-}
-
-.container .ultimoCard:focus,
-.container .ultimoCard:hover{
-    transform: scale(1.5);
-    z-index: 1;
-    border: 1px solid #00a8e1;
-    border-radius: 6px;
 }

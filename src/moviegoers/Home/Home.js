@@ -1,11 +1,13 @@
 import React from "react";
 import './style.css'
+import Header from "../Header/Header";
 import SimpleImageSlider from "react-simple-image-slider";
+import { Add, Desc, Icons, Play, Text } from "./styled";
+
 import img1 from '../../img/jogoperigoso.PNG'
 import img2 from '../../img/alugue.PNG';
 import img3 from '../../img/Capturar3.PNG';
 import img4 from '../../img/theboys.PNG';
-import Header from "../Header/Header";
 
 // img Cards
 import imgCard1 from '../../img/marvel.jpg';
@@ -54,6 +56,14 @@ function Home(){
                             <img src='https://m.media-amazon.com/images/G/01/digital/video/web/cues/v3/prime.svg' alt='Prime' />
                         </div>
                         <img src={imgCard1} alt='teste' />
+                        <div className='descricao'>
+                            <Icons>
+                                <Play/>
+                                <Text>Reproduzir</Text>
+                                <Add/>
+                                <Desc/>
+                            </Icons>
+                        </div>
                     </div>
                     <div className='card'>
                         <div className='primelogo'>
