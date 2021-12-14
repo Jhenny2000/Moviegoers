@@ -2,7 +2,7 @@ import React from "react";
 import './style.css'
 import Header from "../Header/Header";
 import SimpleImageSlider from "react-simple-image-slider";
-import { Add, Desc, Icons, Play, Text } from "./styled";
+import { Add, Desc, Icons, Info, Play, Text, TextP, TextT } from "./styled";
 
 import img1 from '../../img/jogoperigoso.PNG'
 import img2 from '../../img/alugue.PNG';
@@ -15,11 +15,14 @@ import imgCard2 from '../../img/Angelina-Jolie-Eternos-1.jpg';
 import imgCard3 from '../../img/a-garota.jpg';
 import imgCard4 from '../../img/CAPA.png';
 import imgCard5 from '../../img/cientifica.jpg';
+import RIdade from '../../img/idade.png'
 
 // logo 'prime'
 
 
 function Home(){
+
+    const key = '77bc1918a02ebe6043c9270327378c97';
 
     const images = [
         { url : img1 },
@@ -55,7 +58,7 @@ function Home(){
                         <div className='primelogo'>
                             <img src='https://m.media-amazon.com/images/G/01/digital/video/web/cues/v3/prime.svg' alt='Prime' />
                         </div>
-                        <img src={imgCard1} alt='teste' />
+                        <img src={imgCard1} alt='teste'/>
                         <div className='descricao'>
                             <Icons>
                                 <Play/>
@@ -63,9 +66,20 @@ function Home(){
                                 <Add/>
                                 <Desc/>
                             </Icons>
+                            <Info>
+                                <TextP>
+                                    1200+ votos
+                                </TextP>
+                                <div className='imgRI'>
+                                    <img className='iconIdade' src={RIdade}/>
+                                </div>
+                                <TextT>
+                                    1hr 54min
+                                </TextT>
+                            </Info>
                         </div>
                     </div>
-                    <div className='card'>
+                    {/* <div className='card'>
                         <div className='primelogo'>
                             <img src='https://m.media-amazon.com/images/G/01/digital/video/web/cues/v3/prime.svg' alt='Prime' />
                         </div>
@@ -105,7 +119,7 @@ function Home(){
                     </div>
                     <div className='card'>
                         <img src={imgCard5} alt='teste n vai' />
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </>
