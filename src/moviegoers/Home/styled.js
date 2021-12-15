@@ -4,9 +4,9 @@ import styled from 'styled-components';
 export const Play = styled(BsPlayCircle)`
     width: 32px;
     height: 32px;
-    /* margin-right: 20px; */
     position: absolute;
-    left: 4%;
+    left: 6%;
+    /* border: 1px solid yellow; */
     :hover{
         color: #00A8E1;
         cursor: pointer;
@@ -16,7 +16,7 @@ export const Add = styled(BsPlusCircle)`
     width: 32px;
     height: 32px;
     position: absolute;
-    right: 17%;
+    right: 20%;
     :hover{
         color: #00A8E1;
         cursor: pointer;
@@ -37,14 +37,15 @@ export const Icons = styled.div`
     height: 32px;
     width: inherit;
     position: relative;
-    top: 15%;
+    top: 10%;
+    /* border: 1px solid red; */
 `
 
 export const Text = styled.p`
     font-weight: bold;
     font-size: 14px;
     position: absolute;
-    left: 20%;
+    left: 23%;
     margin-top: 6px;
     :hover{
         color: #00A8E1;
@@ -58,8 +59,8 @@ export const Info = styled.div` //max 220
     height: 32px;
     /* border: 1px solid hotpink; */
     position: relative;
-    top: 23%;
-    margin-left: 9px;
+    top: 21%;
+    margin: auto;
 `
 
 export const TextP = styled.div`

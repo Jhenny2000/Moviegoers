@@ -22,7 +22,7 @@ import RIdade from '../../img/idade.png'
 
 function Home(){
 
-    const key = '77bc1918a02ebe6043c9270327378c97';
+    const apiKey = '77bc1918a02ebe6043c9270327378c97';
 
     const images = [
         { url : img1 },
@@ -79,7 +79,7 @@ function Home(){
                             </Info>
                         </div>
                     </div>
-                    {/* <div className='card'>
+                    <div className='card'>
                         <div className='primelogo'>
                             <img src='https://m.media-amazon.com/images/G/01/digital/video/web/cues/v3/prime.svg' alt='Prime' />
                         </div>
@@ -119,7 +119,7 @@ function Home(){
                     </div>
                     <div className='card'>
                         <img src={imgCard5} alt='teste n vai' />
-                    </div> */}
+                    </div>
                 </div>
             </div>
         </>
