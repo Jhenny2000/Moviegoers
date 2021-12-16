@@ -12,12 +12,18 @@ function Header(){
 
 
     function getGenres(){
-        const teste = []
-        for(let i = 0; i < 7; i++){
-            teste.push(genresS.genres[i])
+        const listCat1 = [];
+        const listCat2 = [];
+        const listCat3 = [];
+        for(let i = 0; i < 19; i++){
+            listCat1.push(genresS.genres[i]);
+            // if(listCat2){
+              listCat2.push(genresS.genres.slice(0, 7));
+                // console.log(i)
+            // }
         }
-        console.log(teste)
-        return teste
+        console.log(listCat2)
+        return listCat1
     }
 
 
@@ -55,7 +61,7 @@ function Header(){
                                 <Link className='link' to='/filmes'>
                                     {genresS.length !== 0 ? (
                                         getGenres().map((item)=>{
-                                            return <li className='subItem' key={item.id}>{item.name}</li>
+                                            return <li className='subItem' key={item.id}><span>{item.name}</span></li>
                                                 
                                         })) : (
                                             <p></p>
