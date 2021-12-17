@@ -49,7 +49,7 @@ h2{
 
 .destaques{
     width: 100%;
-    height: 150px;
+    height: 135px;
     /* height: auto; */
     margin-top: 15px;
     margin-bottom: 65px;
@@ -107,8 +107,8 @@ h2{
 
 .card img{
     width: 239px;
-    height: 135px;
-    /* height: auto; */
+    /* height: 135px; */
+    height: auto;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;

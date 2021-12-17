@@ -10,23 +10,6 @@ function Header(){
 
     const [ genresS, setGenresS ] = useState([]);
 
-
-    function getGenres(){
-        const listCat1 = [];
-        const listCat2 = [];
-        const listCat3 = [];
-        for(let i = 0; i < 19; i++){
-            listCat1.push(genresS.genres[i]);
-            // if(listCat2){
-              listCat2.push(genresS.genres.slice(0, 7));
-                // console.log(i)
-            // }
-        }
-        console.log(listCat2)
-        return listCat1
-    }
-
-
     useEffect(()=>{
 
         try{
@@ -58,16 +41,18 @@ function Header(){
                         <div className='containerSubmenu'>
                             <div className='title'><h3>Gêneros</h3></div>
                             <ul className='subCategoria'>
-                                <Link className='link' to='/filmes'>
+                                
                                     {genresS.length !== 0 ? (
-                                        getGenres().map((item)=>{
-                                            return <li className='subItem' key={item.id}><span>{item.name}</span></li>
+                                        genresS.genres.map((item)=>{
+                                            return <Link className='link' to='/filmes'>
+                                                <li className='subItem' key={item.id}><span>{item.name}</span></li>
+                                            </Link>
                                                 
                                         })) : (
                                             <p></p>
                                         )
                                     }
-                                </Link>
+                                
                             </ul>
                         </div> 
                     </div>
