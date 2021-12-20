@@ -67,8 +67,3 @@ function Header(){
 }
 
 export default Header;
-
-{/* // <ul className='subCategoria'> */}
-{/* <Link className='link' to='/filmes'> */}
-{/* // </Link> */}
-                                    {/* // </ul> */}

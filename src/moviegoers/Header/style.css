@@ -94,7 +94,6 @@ nav{
     /* border: 1px solid #555fec; */
     position: relative;
     display: inline-block;
-    /* z-index: 6; */
 }
 
 .itemsCategoria:hover{
@@ -122,13 +121,13 @@ ul{
     column-gap: 80px;
 }
 
-.subCategoria2{
+/* .subCategoria2{
     width: 350px;
     height: auto;
     position: absolute;
-    /* background-color: mediumorchid; */
+    background-color: mediumorchid;
     right: 4%;
-}
+} */
 
 .itemsCategoria:hover .containerSubmenu {
     display: inline-block;
