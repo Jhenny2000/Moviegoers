@@ -64,7 +64,7 @@ export const Info = styled.div` //max 220
 `
 
 export const TextP = styled.div`
-    width: 74px;
+    width: auto;
     max-width: 85px;
     height: 20px;
     /* border: 1px solid red; */
@@ -76,7 +76,7 @@ export const TextP = styled.div`
     text-align: left;
     `
 export const TextT = styled.div`
-    width: 60px;
+    width: auto;
     max-width: 96px;
     height: 20px;
     /* border: 1px solid red; */
@@ -84,6 +84,7 @@ export const TextT = styled.div`
     margin-top: 5px;
     font-size: 12px;
     color: #fff;
-    float: left;
+    float: right;
     text-align: left;
+    margin-left: 20px;
 `

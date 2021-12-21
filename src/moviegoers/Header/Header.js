@@ -3,12 +3,15 @@ import './style.css'
 import logo from '../../img/prime-video-1.png'
 import { Link } from "react-router-dom";
 import { api, apiKey } from "../../service/api";
+import MovieGenres from "../Home/movieG";
 
 function Header(){
 
     const language = 'pt-BR';
 
     const [ genresS, setGenresS ] = useState([]);
+
+    // Gêneros
 
     useEffect(()=>{
 
@@ -20,6 +23,7 @@ function Header(){
             console.log('Error');
         }
     },[]);
+
 
     return(
         <>
@@ -44,9 +48,13 @@ function Header(){
                                 
                                     {genresS.length !== 0 ? (
                                         genresS.genres.map((item)=>{
-                                            return <Link className='link' to='/filmes'>
-                                                <li className='subItem' key={item.id}><span>{item.name}</span></li>
+                                            return(
+                                            <Link className='link' to='/filmes'>
+                                                <li className='subItem' key={item.id}>
+                                                    <span>{item.name}</span>
+                                                </li>
                                             </Link>
+                                            )
                                                 
                                         })) : (
                                             <p></p>

@@ -10,7 +10,7 @@ import img3 from '../../img/Capturar3.PNG';
 import img4 from '../../img/theboys.PNG';
 
 import { api, apiKey, language } from "../../service/api";
-import movieGenres, { MovieGenres } from "./movieG";
+import { MovieGenres } from "./movieG";
 
 
 function Home(){
@@ -21,14 +21,6 @@ function Home(){
         { url : img3 },
         { url : img4 }
     ];
-
-    // const imagesFilmes = [
-    //     { url : imgCard1 },
-    //     { url : imgCard2 },
-    //     { url : imgCard3 },
-    //     { url : imgCard4 },
-    //     { url : imgCard5 }
-    // ];
 
     const [ genresM, setGenresM ] = useState([]);
 
@@ -121,7 +113,7 @@ function Home(){
                     genresM.genres.map((item, i)=>{
                         return(
                             <div key={i}>
-                                <MovieGenres name={item.name} id={item.id} />
+                                <MovieGenres name={item.name} id={item.id}/>
                             </div>
                         )
                     })) : (
