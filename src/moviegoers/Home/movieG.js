@@ -31,6 +31,7 @@ export function MovieGenres({ name, id }){
         return(
             <div className='card' key={movie.id}>
                 <img src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`} alt={movie.title}/>
+                <h4>{movie.title}</h4>
                 <div className='descricao'>
                     <Icons>
                         <Play/>

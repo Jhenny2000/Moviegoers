@@ -1,15 +1,31 @@
 import React, { useEffect, useState } from "react";
-import './style.css'
-import logo from '../../img/prime-video-1.png'
+import './style.css';
+import logo from '../../img/prime-video-1.png';
 import { Link } from "react-router-dom";
 import { api, apiKey } from "../../service/api";
-import MovieGenres from "../Home/movieG";
+import SearchInput from "../SearchInput";
 
 function Header(){
 
     const language = 'pt-BR';
 
     const [ genresS, setGenresS ] = useState([]);
+
+    const [ text, setText ] = useState('');
+    
+    const [ info, setInfo ] = useState({});
+
+    // Search
+
+    useEffect(() => {
+        if (text){
+            fetch(`https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&language=${language}&query=${text}&page=1&include_adult=false`)
+                .then((response) => response.json())
+                .then((response) => {
+                    console.log(response)
+                });
+        }
+    },[text])
 
     // Gêneros
 
@@ -67,7 +83,7 @@ function Header(){
                 </nav>
                 {/* input */}
                 <form className='formInput'>
-                    <input type='text' placeholder='Search'/>
+                    <SearchInput value={text} onChange={(search) => setText(search)}/>
                 </form>
             </header>
         </>
