@@ -13,12 +13,13 @@ import { api, apiKey } from "../../service/api";
 import { MovieGenres } from "./movieG";
 
 // herader imports
-// import React, { useEffect, useState } from "react";
 import './style.css';
 import logo from '../../img/prime-video-1.png';
 import { Link } from "react-router-dom";
-// import { api, apiKey } from "../../service/api";
 import SearchInput from "../SearchInput";
+
+// paginação
+import Pagination from "./Pagination";
 
 
 function Home(){
@@ -31,12 +32,13 @@ function Home(){
 
     const [ text, setText ] = useState('');
     
-    const [ info, setInfo ] = useState({});
+    const [ info, setInfo ] = useState([]);
 
     // Search
 
     useEffect(() => {
         if (text){
+            console.log(text)
             fetch(`https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&language=${language}&query=${text}&page=1&include_adult=false`)
                 .then((response) => response.json())
                 .then((response) => {
@@ -138,7 +140,7 @@ function Home(){
                                     {genresS.length !== 0 ? (
                                         genresS.genres.map((item)=>{
                                             return(
-                                            <Link className='link' to='/filmes'>
+                                            <Link className='link' to={`/filmes?id=${item.id}&name=${item.name}`}>
                                                 <li className='subItem' key={item.id}>
                                                     <span>{item.name}</span>
                                                 </li>
@@ -167,21 +169,23 @@ function Home(){
                 showNavs={true}
                 navSize={45}
                 navStyle={2}
-                navMargin={3}/>
+                navMargin={3}
+                autoPlay={true}/>
             </div>
             <div className='container center'>
                 
                 <div className="results">
-                {info.data && (
-                        info.data.map((movieSearch)=>{
-                            return  <div className='card' key={movieSearch.id}>
+                {info.results && (
+                        info.results.map((movieSearch)=>{
+                            return  <div className='searchCard' key={movieSearch.id}>
                                         <div className='primelogo'>
                                             <img src='https://m.media-amazon.com/images/G/01/digital/video/web/cues/v3/prime.svg' alt='Prime' />
                                         </div>
                                         <img src={`https://image.tmdb.org/t/p/original/${movieSearch.backdrop_path}`} alt={movieSearch.title}/>
                                         <h4>{movieSearch.title}</h4>
                                     </div>
-                        }))}
+                        }))
+                        }
                 </div>
                 <h2>Em alta</h2>
                 <div className='destaques'>
@@ -226,6 +230,7 @@ function Home(){
                     })) : (
                         <p></p>
                     )}
+                <Pagination/>
             </div>
         </>
     )
