@@ -18,9 +18,6 @@ import logo from '../../img/prime-video-1.png';
 import { Link } from "react-router-dom";
 import SearchInput from "../SearchInput";
 
-// paginação
-import Pagination from "./Pagination";
-
 
 function Home(){
 
@@ -230,7 +227,6 @@ function Home(){
                     })) : (
                         <p></p>
                     )}
-                <Pagination/>
             </div>
         </>
     )

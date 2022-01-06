@@ -6,7 +6,12 @@ import { api, apiKey, language } from "../../service/api";
 import { Add, Desc, Icons, Info, Play, Text, TextP, TextT } from "../Home/styled";
 import '../Home/style.css';
 
+// paginação
+import Pagination from "../Pagination";
+
 function Filmes(){
+    const Limit = 20;
+    const [ offset, setOffset ] = useState(0);
 
     const [filmes, setFilmes] = useState([])
 
@@ -17,7 +22,7 @@ function Filmes(){
 
     useEffect(()=> {
         try{
-            api.get(`/discover/movie?with_genres=${myId}&language=${language}&api_key=${apiKey}`).then(({data})=>{
+            api.get(`discover/movie?api_key=${apiKey}&language=${language}&sort_by=popularity.desc&include_adult=false&include_video=false&page=${Limit}&with_genres=${myId}&with_watch_monetization_types=flatrate`).then(({data})=>{
                 setFilmes(data);
             })
         }catch (error) {
@@ -59,6 +64,11 @@ function Filmes(){
                 ):(<></>)
                 }
                 </div>
+            </div>
+            <div className="containerPagination center">
+                {filmes.results &&(
+                    <Pagination limit={Limit} total={filmes.total_results} offset={offset} setOffset={setOffset}/>
+                )}
             </div>
         </>
     )

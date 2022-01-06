@@ -112,7 +112,7 @@ nav{
     padding-bottom: 10px;
 }
 
-ul{
+.subCategoria{
     -moz-column-count: 4;
     -moz-column-gap: 20px;
     -webkit-column-count: 4;
