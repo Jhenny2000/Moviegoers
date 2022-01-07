@@ -10,8 +10,11 @@ import '../Home/style.css';
 import Pagination from "../Pagination";
 
 function Filmes(){
-    const Limit = 20;
-    const [ offset, setOffset ] = useState(0);
+    const [ current, setCurrent ] = useState(1);
+
+    const [ totalPages, setTotalPages] = useState(null);
+
+    const offset = 1;
 
     const [filmes, setFilmes] = useState([])
 
@@ -21,14 +24,26 @@ function Filmes(){
         console.log(myId);
 
     useEffect(()=> {
-        try{
-            api.get(`discover/movie?api_key=${apiKey}&language=${language}&sort_by=popularity.desc&include_adult=false&include_video=false&page=${Limit}&with_genres=${myId}&with_watch_monetization_types=flatrate`).then(({data})=>{
-                setFilmes(data);
-            })
-        }catch (error) {
-            console.log('Error');
+        if(current){
+            try{
+                api.get(`discover/movie?api_key=${apiKey}&language=${language}&sort_by=popularity.desc&include_adult=false&include_video=false&page=${current}&with_genres=${myId}&with_watch_monetization_types=flatrate`).then(({data})=>{
+                    setFilmes(data);
+                    setTotalPages(data.total_pages);
+                })
+            }catch (error) {
+                console.log('Error');
+            }
         }
-    },[])
+        
+    },[current])
+
+    function PageNext(){
+        setCurrent((page) => page + 1 )
+    }
+
+    function PageBack(){
+        setCurrent((page) => page - 1 )
+    }
 
     return(
         <>
@@ -66,9 +81,7 @@ function Filmes(){
                 </div>
             </div>
             <div className="containerPagination center">
-                {filmes.results &&(
-                    <Pagination limit={Limit} total={filmes.total_results} offset={offset} setOffset={setOffset}/>
-                )}
+                <Pagination current={current} total={totalPages} offset={offset} next={PageNext} back={PageBack}/>
             </div>
         </>
     )

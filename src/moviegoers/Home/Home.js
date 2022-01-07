@@ -18,6 +18,7 @@ import logo from '../../img/prime-video-1.png';
 import { Link } from "react-router-dom";
 import SearchInput from "../SearchInput";
 
+import '../Pagination';
 
 function Home(){
 
@@ -31,9 +32,13 @@ function Home(){
     
     const [ info, setInfo ] = useState([]);
 
+    // Modal
+    const [ isModalVisible, setIsModalVisible ] = useState(false);
+
     // Search
 
     useEffect(() => {
+        setInfo({});
         if (text){
             console.log(text)
             fetch(`https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&language=${language}&query=${text}&page=1&include_adult=false`)
@@ -192,22 +197,23 @@ function Home(){
                                         <div className='primelogo'>
                                             <img src='https://m.media-amazon.com/images/G/01/digital/video/web/cues/v3/prime.svg' alt='Prime' />
                                         </div>
-                                        <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title}/>
+                                        {/* <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title}/> */}
                                         <h4>{item.title}</h4>
                                         <div className='descricao'>
                                             <Icons>
                                                 <Play/>
                                                 <Text>Reproduzir</Text>
                                                 <Add/>
-                                                <Desc/>
+                                                <Desc onClick={() => setIsModalVisible(true)}/>
+                                                {/* {item.id === item.id && isModalVisible ? <h1>Modal</h1> : null} */}
                                             </Icons>
                                             <Info>
                                                 <TextP>
                                                     {item.vote_count}+ votos
                                                 </TextP>
-                                                <TextT>
+                                                {/* <TextT>
                                                     {item.runtime}min
-                                                </TextT>
+                                                </TextT> */}
                                             </Info>
                                         </div>
                                     </div>
@@ -224,7 +230,7 @@ function Home(){
                                 <MovieGenres name={item.name} id={item.id}/>
                             </div>
                         )
-                    })) : (
+                    }))  : (
                         <p></p>
                     )}
             </div>
