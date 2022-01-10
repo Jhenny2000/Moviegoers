@@ -37,7 +37,7 @@ export function MovieGenres({ name, id }){
                         <Play/>
                         <Text>Reproduzir</Text>
                         <Add/>
-                        <Desc/>
+                        {/* <Desc/> */}
                     </Icons>
                     <Info>
                         <TextP>

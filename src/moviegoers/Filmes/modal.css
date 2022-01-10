@@ -1,0 +1,32 @@
+.modal{
+    background-color: #a14d4d;
+    border-radius: 4px;
+    max-width: 800px;
+    /* height: 500px; */
+    margin: 40px auto 0 auto;
+    padding: 15px;
+    z-index: 100;
+}
+
+.modal__overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0.6);
+}
+
+.close-button{
+    float: right;
+    background: unset;
+    border: unset;
+}
+
+.movieVideo{
+    width: 750px;
+    height: 400px;
+    background-color: yellowgreen;
+    margin-bottom: 50px;
+    margin: auto;
+}

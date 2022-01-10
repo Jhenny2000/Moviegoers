@@ -1,5 +1,6 @@
 import React from "react";
 import './Home/style.css';
+import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 
 // máximo de buttons da pagina
 // const MaxItems = 9;
@@ -29,9 +30,7 @@ const Pagination = ({ current, total, offset, next, back }) => {
             <div >
                 <div>
                     { current > 1 && (
-                        <button onClick={() => back(current)}>
-                            Anterior
-                        </button>
+                        <IoIosArrowBack onClick={() => back(current)}/>
                     )}
                 </div>
                 <div>
@@ -40,9 +39,7 @@ const Pagination = ({ current, total, offset, next, back }) => {
                 </div>
                 <div>
                     { pages > current && (
-                        <button onClick={() => next(current)}>
-                           Próximo
-                        </button>
+                        <IoIosArrowForward onClick={() => next(current)}/>
                     )}
                 </div>
                 {/* utilizando a contagem do index pois ele começa do 0 até o 8 e soma-la com o first que é a 

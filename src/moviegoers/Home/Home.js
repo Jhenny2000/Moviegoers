@@ -32,9 +32,6 @@ function Home(){
     
     const [ info, setInfo ] = useState([]);
 
-    // Modal
-    const [ isModalVisible, setIsModalVisible ] = useState(false);
-
     // Search
 
     useEffect(() => {
@@ -197,15 +194,14 @@ function Home(){
                                         <div className='primelogo'>
                                             <img src='https://m.media-amazon.com/images/G/01/digital/video/web/cues/v3/prime.svg' alt='Prime' />
                                         </div>
-                                        {/* <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title}/> */}
+                                        <img src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} alt={item.title}/>
                                         <h4>{item.title}</h4>
                                         <div className='descricao'>
                                             <Icons>
                                                 <Play/>
                                                 <Text>Reproduzir</Text>
                                                 <Add/>
-                                                <Desc onClick={() => setIsModalVisible(true)}/>
-                                                {/* {item.id === item.id && isModalVisible ? <h1>Modal</h1> : null} */}
+                                                {/* <Desc/> */}
                                             </Icons>
                                             <Info>
                                                 <TextP>
