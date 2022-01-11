@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import './modal.css'
 import { api, apiKey, language } from "../../service/api";
 import ReactPlayer from "react-player";
+import { IoCloseCircle } from 'react-icons/io5';
 
 
 const portalRoot = document.getElementById('portal-root')
@@ -44,22 +45,42 @@ const Modal = ( { children, isOpen, onClickClose, filmeId } ) => {
     if(!isOpen){
         return null;
     }
+
+    function getTrailer(){
+        const movieTrailer = []
+        for( let i = 0; i < 1; i++ ){
+            movieTrailer.push(trailerMovie.results[i])
+        }
+        return movieTrailer;
+    }
     
 
     return ReactDOM.createPortal(
         <div className="modal__overlay">
-            {trailerMovie.results.map((movieTrailer) => {
-                getDescById().map((itemDesc) => {
-                return <div className="modal">
-                    <button type="button" className="close-button" onClick={onClickClose}>X</button>
-                    {children}
-                    {/* <div className="movieVideo"> */}
-                        <ReactPlayer url={`https://www.youtube.com/watch?v=${movieTrailer.key}`}/>
-                        {/* </div> */}
-                    <h1>{itemDesc.title}</h1>
-                </div>
-            })
-            })}
+            <div className="modal">
+                <IoCloseCircle size={40} type="button" className="close-button" onClick={onClickClose}/>
+                {children}
+                {/* titulo */}
+                {getDescById().map((itemDesc) => {
+                    return <div className="modalTitle">
+                                <h1 className="titleMovieDesc">{itemDesc.title}</h1>
+                                {/* <p>{itemDesc.overview}</p> */}
+                            </div>
+                })}
+                {/* Trailer */}
+                {getTrailer().map((movieTrailer) => {
+                    return  <div className="movieVideo">
+                                <ReactPlayer width={800} height={450} url={`https://www.youtube.com/watch?v=${movieTrailer.key}`}/>
+                            </div>
+                })}
+                {/* Descrição do filme */}
+                {getDescById().map((itemDesc) => {
+                    return  <div className="modalConteudo">
+                                {/* <h1>{itemDesc.title}</h1> */}
+                                <p>{itemDesc.overview}</p>
+                            </div>
+                })}
+            </div>
         </div>,
         portalRoot,
     );

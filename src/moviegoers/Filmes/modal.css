@@ -1,11 +1,11 @@
 .modal{
-    background-color: #a14d4d;
-    border-radius: 4px;
+    background-color: #1b2530;
+    border-radius: 10px;
     max-width: 800px;
     /* height: 500px; */
     margin: 40px auto 0 auto;
-    padding: 15px;
     z-index: 100;
+    position: relative;
 }
 
 .modal__overlay{
@@ -21,12 +21,37 @@
     float: right;
     background: unset;
     border: unset;
+    position: absolute;
+    top: 3%;
+    right: 3%;
+}
+
+.close-button:hover{
+    color: #00a8e1;
+    cursor: pointer;
+}
+
+.modalTitle{
+    width: 700px;
+    height: auto;
+    margin: auto;
+    background-color: lawngreen;
+    position: relative;
+    /* top: 50%; */
+}
+
+/* titulo movie */
+.titleMovieDesc{
+    position: absolute;
+    top: 5%;
 }
 
 .movieVideo{
-    width: 750px;
-    height: 400px;
-    background-color: yellowgreen;
+    width: inherit;
+    height: 450px;
+    /* background-color: yellowgreen; */
     margin-bottom: 50px;
     margin: auto;
+    /* position: absolute; */
+    /* top: 10%; */
 }
