@@ -68,9 +68,15 @@ const Modal = ( { children, isOpen, onClickClose, filmeId } ) => {
                             </div>
                 })}
                 {/* Trailer */}
-                {getTrailer().map((movieTrailer) => {
+                {getTrailer(trailerMovie.results).map((movieTrailer) => {
                     return  <div className="movieVideo">
+                                { trailerMovie.results.length > 0 ? (
                                 <ReactPlayer width={800} height={450} url={`https://www.youtube.com/watch?v=${movieTrailer.key}`}/>
+                                )
+                                :   (<div className="semVideo">
+                                        <h2>Não possui Trailer</h2>
+                                    </div>)
+                                }
                             </div>
                 })}
                 {/* Descrição do filme */}

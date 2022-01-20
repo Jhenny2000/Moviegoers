@@ -110,7 +110,6 @@ function Filmes(){
                                             {filme.vote_count}+ votos
                                         </TextP>
                                         <TextT>
-                                            {/* {movie.runtime}min */}
                                         </TextT>
                                     </Info>
                                 </div>

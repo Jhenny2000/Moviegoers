@@ -163,7 +163,7 @@ function Home(){
 
             <div className='slide'>
                 <SimpleImageSlider
-                width={'100%'} height={270}
+                width={'100%'} height={'45vh'}
                 images={images} showBullets={true}
                 showNavs={true}
                 navSize={45}
